@@ -65,6 +65,18 @@ namespace RestComAspNet.Controllers
 
             return BadRequest("Invalid Input");
         }
+
+        [HttpGet("raizquadrada/{primeiroNumero}")]
+        public IActionResult GetRaizQuadrada(string primeiroNumero)
+        {
+            if (IsNumeric(primeiroNumero))
+            {
+                var raizQuadrada = Math.Sqrt((double)ConvertToDecimal(primeiroNumero)); 
+                return Ok(raizQuadrada.ToString());
+            }
+
+            return BadRequest("Invalid Input");
+        }
         private bool IsNumeric(string strNumero)
         {
             double number;
