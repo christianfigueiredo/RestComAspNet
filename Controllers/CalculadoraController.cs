@@ -19,7 +19,7 @@ namespace RestComAspNet.Controllers
         }
 
         [HttpGet("adicao/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult GetAdicao(string primeiroNumero, string segundoNumero)
+        public IActionResult Adicao(string primeiroNumero, string segundoNumero)
         {
             if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero))
             {
@@ -31,7 +31,7 @@ namespace RestComAspNet.Controllers
         }
 
         [HttpGet("subtracao/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult GetSubtracao(string primeiroNumero, string segundoNumero)
+        public IActionResult Subtracao(string primeiroNumero, string segundoNumero)
         {
             if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero))
             {
@@ -43,7 +43,7 @@ namespace RestComAspNet.Controllers
         }
 
         [HttpGet("divisao/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult GetDivisao(string primeiroNumero, string segundoNumero)
+        public IActionResult Divisao(string primeiroNumero, string segundoNumero)
         {
             if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero))
             {
@@ -55,7 +55,7 @@ namespace RestComAspNet.Controllers
         }
 
         [HttpGet("multiplicacao/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult GetMultiplicacao(string primeiroNumero, string segundoNumero)
+        public IActionResult Multiplicacao(string primeiroNumero, string segundoNumero)
         {
             if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero))
             {
@@ -67,7 +67,7 @@ namespace RestComAspNet.Controllers
         }
 
         [HttpGet("raizquadrada/{primeiroNumero}")]
-        public IActionResult GetRaizQuadrada(string primeiroNumero)
+        public IActionResult RaizQuadrada(string primeiroNumero)
         {
             if (IsNumeric(primeiroNumero))
             {
