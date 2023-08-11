@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RestComAspNet.Model.Context;
 using RestComAspNet.Services;
 using RestComAspNet.Services.Implementations;
 using System;
@@ -29,6 +31,10 @@ namespace RestComAspNet
         {
 
             services.AddControllers();
+
+            string connection = Configuration.GetConnectionString("MySQLConnectionString");
+
+           services.AddDbContextPool<MySqlContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
             // injeção de dependencias
             services.AddScoped<IPersonService, PersonServiceImplementation>();
